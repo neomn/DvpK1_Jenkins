@@ -47,3 +47,12 @@ services:
     networks:
       - jenkins
 
+  prod-node: 
+    image: alpine:3.19.1
+    container_name: prod-node
+    hostname: prod-node
+    restart: unless-stopped
+    expose: 
+      - "22"
+    networks:
+        - jenkins
