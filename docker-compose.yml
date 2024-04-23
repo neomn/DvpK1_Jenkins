@@ -36,3 +36,14 @@ services:
     networks:
       - jenkins
 
+  agent2: 
+    image: jenkins/ssh-agent:jdk21
+    container_name: agent2
+    hostname: agent2
+    restart: unless-stopped
+    expose: 
+      - "22"
+      - "50000"
+    networks:
+      - jenkins
+
