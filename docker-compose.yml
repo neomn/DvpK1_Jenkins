@@ -22,6 +22,9 @@ services:
       - "50000"
     volumes:
       - jenkins_home:/var/jenkins_home
+      - type: bind
+        source: ./files 
+        target: /files
     networks:
         - jenkins
         
@@ -47,11 +50,12 @@ services:
     networks:
       - jenkins
 
-  prod-node: 
+  prod: 
     image: alpine:3.19.1
-    container_name: prod-node
-    hostname: prod-node
+    container_name: prod
+    hostname: prod
     restart: unless-stopped
+    command: ["tail", "-f", "/dev/null"]
     expose: 
       - "22"
     networks:
