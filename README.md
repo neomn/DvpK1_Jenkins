@@ -16,4 +16,10 @@ this apps must be installed
 
     docker compose up -d 
     
+4- by default, these images has jenkins user already created, so we dont need to create another user , we just need to setup ssh agent: 
+
+    make agents-ready
+
+if you didn't install make since it was optional then run make agents-ready steps manually
+
 
