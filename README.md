@@ -22,4 +22,10 @@ this apps must be installed
 
 if you didn't install make since it was optional then run make agents-ready steps manually
 
+### all done , now browse 'localhost:8080' 
+
+if you need to use a shell on master node , since docker exec command will creates a new sell session each time,  you can use below command to setup ssh-agent on that new shell for you so you will be able to ssh into the agent nodes: 
+
+    make master-shell
+
 
