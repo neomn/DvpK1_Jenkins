@@ -12,5 +12,8 @@ this apps must be installed
     
     docker network create jenkins
     
-   
+3- download images and run the containers:
+
+    docker compose up -d 
+    
 
