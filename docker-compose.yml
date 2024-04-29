@@ -33,6 +33,8 @@ services:
     container_name: agent1
     hostname: agent1
     restart: unless-stopped
+    volumes: 
+      - ./files:/files
     expose: 
       - "22"
       - "50000"
@@ -44,6 +46,8 @@ services:
     container_name: agent2
     hostname: agent2
     restart: unless-stopped
+    volumes: 
+      - ./files:/files
     expose: 
       - "22"
       - "50000"
@@ -55,8 +59,8 @@ services:
     container_name: prod
     hostname: prod
     restart: unless-stopped
-    command: ["tail", "-f", "/dev/null"]
     expose: 
       - "22"
     networks:
         - jenkins
+    command: ["tail", "-f", "/dev/null"]
